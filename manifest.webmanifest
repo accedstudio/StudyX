@@ -1,0 +1,9 @@
+{
+  "name": "StudyX \u2014 Smart Student Companion",
+  "short_name": "StudyX",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#155eef",
+  "description": "A collection of useful student tools."
+}

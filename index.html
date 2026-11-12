@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#155eef">
+  <meta name="description" content="StudyX — your smart student companion.">
+  <title>StudyX — Your Smart Student Companion</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script defer src="https://unpkg.com/mammoth@1.8.0/mammoth.browser.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="StudyX home"><span class="brand-icon">✦</span> Study<span>X</span></a>
+    <nav class="desktop-nav">
+      <a href="#dashboard">Home</a><a href="#tools">Tools</a><a href="#documents">Documents</a><a href="#profile">Profile</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <main class="container">
+    <section class="welcome" id="dashboard">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+        <h1 id="welcomeTitle">Hello, welcome! 👋</h1>
+        <p class="muted">Ready to make today productive?</p>
+        <div class="quick-search"><span>⌕</span><input id="toolSearch" placeholder="Search any tool..." aria-label="Search tools"></div>
+      </div>
+      <div class="welcome-art" aria-hidden="true">📚</div>
+    </section>
+
+    <section class="section" id="tools">
+      <div class="section-heading"><div><p class="eyebrow">STUDY WORKSPACE</p><h2>All your tools</h2></div><span class="pill">Free student tools</span></div>
+      <div class="tool-grid" id="toolGrid">
+        <button class="tool-card" data-open="calculator"><span>🧮</span><b>Calculator</b><small>Basic & scientific</small></button>
+        <button class="tool-card" data-open="image"><span>🖼️</span><b>Image tools</b><small>Resize, crop & convert</small></button>
+        <button class="tool-card" data-open="documents"><span>📄</span><b>Document reader</b><small>PDF, DOCX, TXT</small></button>
+        <button class="tool-card" data-open="translator"><span>🌐</span><b>Translator</b><small>10 languages</small></button>
+        <button class="tool-card" data-open="timer"><span>⏳</span><b>Study timer</b><small>Countdown timer</small></button>
+        <button class="tool-card" data-open="stopwatch"><span>⏱️</span><b>Stopwatch</b><small>Time your sessions</small></button>
+        <button class="tool-card" data-open="alarm"><span>⏰</span><b>Alarm</b><small>While this page is open</small></button>
+        <button class="tool-card" data-open="countdown"><span>📅</span><b>Exam countdown</b><small>Days remaining</small></button>
+        <button class="tool-card" data-open="notes"><span>📝</span><b>Notes</b><small>Auto-saved notes</small></button>
+        <button class="tool-card" data-open="wordcounter"><span>🔤</span><b>Word counter</b><small>Words & characters</small></button>
+        <button class="tool-card" data-open="todo"><span>☑️</span><b>To-do list</b><small>Track your tasks</small></button>
+        <button class="tool-card" data-open="profile"><span>🎓</span><b>Student profile</b><small>Name & documents</small></button>
+      </div>
+    </section>
+
+    <section class="workspace section" id="workspace">
+      <div class="section-heading"><div><p class="eyebrow">TOOL WORKSPACE</p><h2 id="panelTitle">Get started</h2></div><button class="text-btn" id="closePanel">Close ×</button></div>
+      <div id="panelBody" class="panel-body"><p class="muted">Choose a tool above to open it here.</p></div>
+    </section>
+
+    <section class="section" id="profile">
+      <div class="section-heading"><div><p class="eyebrow">YOUR ACCOUNT ON THIS DEVICE</p><h2>Student profile</h2></div></div>
+      <div class="profile-inline">
+        <label>Student name<input id="studentName" maxlength="50" placeholder="Enter your name"></label>
+        <label>Class / Grade<input id="studentClass" maxlength="30" placeholder="e.g. Class 12"></label>
+        <button class="primary" id="saveProfile">Save profile</button>
+      </div>
+      <p class="hint">Your profile, notes and tasks are saved locally in this browser on this device. This demo does not create an online account or cloud backup.</p>
+    </section>
+
+    <section class="ad-slot" aria-label="Advertisement placeholder">
+      <small>ADVERTISEMENT</small><span>Small banner space — ads are not connected yet</span>
+    </section>
+  </main>
+
+  <footer><b>StudyX</b><span>Learn. Plan. Achieve.</span><span>© <span id="year"></span> StudyX</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
